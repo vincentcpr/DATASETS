@@ -38,6 +38,7 @@ a.inp{
 	text-decoration: none;
 }
 
+
 hr{
 	 border-top: 1px solid yellow;
 	 width: 50%;
@@ -73,7 +74,7 @@ button#menu-toggle:focus{
 	width: 200px;
 	float: left;
 	position: absolute;
-  	top: 50px;
+  	top: 49px;
   	bottom: 0;
 	background-color: #070d15;
 	border-right: 1px solid yellow;
