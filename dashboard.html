@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <p style="color: red;"></p>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>JDD ENV</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link href="css/hamburger.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+
+</head>
+
+
+
+<body>
+
+  <div class="top-menu">
+      <!-- icon menu burger -->
+      <div id="menutog" class="menu-icon">
+        <div class="icon_span"></div>
+        <svg x="0" y="0"  width="54px" height="54px" viewBox="0 0 54 54">
+          <path d="M16.500,27.000 C16.500,27.000 24.939,27.000 38.500,27.000 C52.061,27.000 49.945,15.648 46.510,11.367 C41.928,5.656 34.891,2.000 27.000,2.000 C13.193,2.000 2.000,13.193 2.000,27.000 C2.000,40.807 13.193,52.000 27.000,52.000 C40.807,52.000 52.000,40.807 52.000,27.000 C52.000,13.000 40.837,2.000 27.000,2.000"></path>
+        </svg> 
+      </div>
+
+    <button class="btn">Déconnexion</button>
+  </div>
+
+  <div id="leftm" class="left-menu">
+    <h2>DATASETS</h2>
+    <button class="btn-left">HOMOL</button>
+    <button class="btn-left">INT</button>
+    <button class="btn-left">IMA</button>
+    <button class="btn-left">PRÉ</button>
+  </div>
+
+  <div class="main">
+
+    <div class="globLigne">
+      <div class="uneLigne">
+        <div class="Lcase w300">Charpentier-pute</div>
+        <div class="Lcase w300">09879879877</div>
+        <div class="Lcase w300">VISA ELECTRON</div>
+        <div class="Lcase w60">76</div>
+        <div style="padding-right: 5px; cursor: pointer;" class="Lcase w40"><img width="30px" height="30px" src="images/dlicon.png"></div>
+     </div>
+    </div>
+
+    <div class="globLigne">
+      <div class="uneLigne">
+        <div class="Lcase w300">Charpentier-pute</div>
+        <div class="Lcase w300">09879879877</div>
+        <div class="Lcase w300">VISA ELECTRON</div>
+        <div class="Lcase w60">76</div>
+        <div style="padding-right: 5px;cursor: pointer;" class="Lcase w40"><img width="30px" height="30px" src="images/dlicon.png"></div>
+     </div>
+    </div>
+
+    <div class="globLigne">
+      <div class="uneLigne">
+        <div class="Lcase w300">Charpentier-pute</div>
+        <div class="Lcase w300">09879879877</div>
+        <div class="Lcase w300">VISA ELECTRON</div>
+        <div class="Lcase w60">76</div>
+        <div style="padding-right: 5px;cursor: pointer;" class="Lcase w40"><img width="30px" height="30px" src="images/dlicon.png"></div>
+     </div>
+    </div>
+
+    <div class="globLigne">
+      <div class="uneLigne">
+        <div class="Lcase w300">Charpentier-pute</div>
+        <div class="Lcase w300">09879879877</div>
+        <div class="Lcase w300">VISA ELECTRON</div>
+        <div class="Lcase w60">76</div>
+        <div style="padding-right: 5px;cursor: pointer;" class="Lcase w40"><img width="30px" height="30px" src="images/dlicon.png"></div>
+     </div>
+    </div>
+    
+  </div> <!-- Fin main -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="js/jquery/jquery.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    //burger
+    $(document).ready(function(){
+      $('.menu-icon').click(function(e){
+          e.preventDefault();
+          $this = $(this);
+          if($this.hasClass('is-opened')){
+              $this.addClass('is-closed').removeClass('is-opened');
+          }else{
+              $this.removeClass('is-closed').addClass('is-opened');
+          }
+      })
+    });
+    //Fin burger
+
+    // Afficher/cacher le menu de gauche
+    $("#leftm").hide();
+    $("#menutog").click(function(){
+      $("#leftm").slideToggle();
+
+       if ($("#leftm").is( ":visible" )) {
+           $(".main").css({ left: "200px" })
+      }
+
+       if ($("#leftm").is( ":hidden" )) {
+        $(".main").css({ left: "0" })
+      }
+
+      
+    });
+
+   
+
+   
+
+
+
+  
+
+</script>
+
+</body>
+
+</html>

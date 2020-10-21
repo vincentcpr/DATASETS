@@ -1,0 +1,261 @@
+
+
+body{
+	background-color: #1b1f25;display: flex; align-items: stretch;
+	font-family: Arial;
+	margin: 0px;
+}
+
+textarea:focus, input:focus, button:focus, select:focus, select:hover, select.inp{
+    outline: none;
+}
+#pseudo, #mdp, #id, #nom, #prenom, #team{
+	margin-bottom: 15px;
+}
+.main-c{
+	height: 400px;
+	width: 300px;
+	margin: 100px auto;
+}
+
+.inp{
+	color: #BDBDBD;
+	text-indent: 15px;
+	background-color: #070d15;
+	border: none;
+	border-left: 2px solid yellow;
+	height: 40px;
+	width: 100%;
+}
+
+a.inp{
+	color: #BDBDBD;
+	text-indent: 15px;
+	background-color: #070d15;
+	border: none;
+	border-left: 2px solid yellow;
+	margin-bottom: 15px;
+	text-decoration: none;
+}
+
+hr{
+	 border-top: 1px solid yellow;
+	 width: 50%;
+}
+
+
+.bg-dark{
+	background-color: #070d15;
+}
+
+select>option{
+	text-transform: uppercase;
+}
+
+.hamburger-box{
+    background-color: red;
+    color: white;
+}
+
+button#menu-toggle:focus{
+	border:none;
+    color: white;
+}
+
+.top-menu{
+	height: 50px;
+	width: 100%;
+	background-color: #070d15;
+	border-bottom: 1px solid yellow;
+}
+
+.left-menu{
+	width: 200px;
+	float: left;
+	position: absolute;
+  	top: 50px;
+  	bottom: 0;
+	background-color: #070d15;
+	border-right: 1px solid yellow;
+	display: block;
+}
+
+.main{
+	width: 1000px;
+	height: auto;
+	margin: 100px auto;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0px;
+	right: 0;
+	text-align: center;
+	position: absolute;
+	}
+
+
+.top-menu>.btn{
+	height: 35px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 7px;
+	margin-right: 15px;
+	background-color: #F5DA81;
+	float: right;
+	border: none;
+	text-transform: uppercase;
+	color: #000;
+	border-radius: 0px;
+	font-size: 17px;
+}
+
+.btn-left{
+	width: 90%;
+	height: 35px;
+	text-align: center;
+	border: none;
+	text-transform: uppercase;
+	color: #000;
+	border-radius: 0px;
+	font-size: 17px;
+	margin: 15px auto;
+	display: block;
+	background-color: #BDBDBD;
+}
+
+.left-menu>h2{
+	text-align: center;
+	color: #F2F2F2;
+}
+
+.globLigne{
+	height: 40px;
+	width: 100%;
+	margin-top: 10px;
+}
+.uneLigne{
+	height: 40px;
+	width: 100%;
+	background-color: #070d15;
+	margin-bottom: 15px;
+	display: table-row;
+}
+
+
+
+.w40{ width: 40px; }
+.w60{ width: 60px; }
+.w300{ width: 300px; }
+
+
+.Lcase{
+	min-height: 40px;
+	height: auto;
+	display: table-cell;
+	color: #F2F2F2;
+	line-height: 40px;
+	text-align: left;
+	text-indent: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*MENU BURGER*/
+/*MENU BURGER*/
+/*MENU BURGER*/
+
+.menu-icon{
+    position: relative;
+    float: left;
+    width: 54px;
+    height: 54px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: transform 0.5s;
+}
+
+.menu-icon .icon_span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); 
+    width: 22px;
+    height: 2px;
+    background-color: #fff;
+    transition: background 0.5s, transform 0.5s;
+    transition: background 0.5s steps(1, end);
+}
+
+.icon_span::before, .icon_span::after{
+    transform-origin: 100% 50%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 22px;
+    height: 2px;
+    transform: translateY(-8px);
+    background-color: #fff;
+    transition: transform 0.5s;
+}
+
+.icon_span::after{
+    transform: translateY(8px);
+}
+
+.menu-icon:hover .icon_span::before{
+    transform: translateY(-10px);
+}
+
+.menu-icon:hover .icon_span::after{
+    transform: translateY(10px);
+}
+
+svg{
+    opacity: 0;
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 2px;
+    stroke-dasharray: 22 230;
+    transition: stroke-dasharray 0.5s, stroke-dashoffset 0.5s, opacity 0.5s steps(1, end);
+}
+
+.menu-icon.is-opened .icon_span{
+    transition: background 0.5s steps(1, start);
+    background-color: transparent;
+}
+
+.menu-icon.is-opened svg{
+    opacity: 1;
+    stroke-dasharray: 160;
+    stroke-dashoffset: -65;
+    transition: stroke-dasharray 0.5s, stroke-dashoffset 0.5s, opacity 0.5s steps(1, start);
+    display: none;
+}
+
+.menu-icon.is-opened .icon_span::before{
+    transform: translateX(-3px) translateY(-8px) rotate(-45deg);
+}
+
+.menu-icon.is-opened .icon_span::after{
+    transform: translateX(-3px) translateY(8px) rotate(45deg);
+}
+
+
+/*MENU BURGER*/
+/*MENU BURGER*/
+/*MENU BURGER*/
+
+
+
+
+
+
