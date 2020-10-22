@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -30,15 +30,23 @@
               <center><img height="200" width="190" src="images/nestorv2.png"></center>
             </div>
           <!-- form inscription -->
-          <form action="#" method="post">
-            <div><input class="inp" type="text" id="nom" placeholder="NOM" name="user_name"></div>
-            <div><input class="inp" type="email" id="prenom" placeholder="PRENOM" name="user_mail"></div>
-            <div><input class="inp" type="password" id="mdp" placeholder="MOT DE PASSE" name="user_name"></div>
+          <form action="/addUser" method="post">
+            <div><input class="inp" type="text" id="nom" placeholder="NOM" name="nom"></div>
+            <div><input class="inp" type="text" id="prenom" placeholder="PRENOM" name="prenom"></div>
+            <div><input class="inp" type="password" id="mdp" placeholder="MOT DE PASSE" name="mdp"></div>
             
-            <div><select class="inp" id="team">
-              <option value=""  >TEAM 1 </option>
-              <option value=""  >team 2 </option>
-              <option value=""  >team 3 </option>
+            <div><select class="inp" id="team" name="team">
+              <option value="TA">TA</option>
+              <option value="AUTH">AUTH</option>
+              <option value="PTRAD">PTRAD</option>
+              <option value="VDC">VDC</option>
+              <option value="RIO">RIO</option>
+              <option value="CREDA">CREDA</option>
+              <option value="PRETP">PRETP</option>
+              <option value="CAREIA">CRM</option>
+              <option value="CRM">CRM</option>
+              <option value="PMOB">PMOB</option>
+              <option value="PFAM">PFAM</option>
             </select></div>
 
             <div><button class="inp" type="submit">S'INSCRIRE</button></div>

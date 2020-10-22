@@ -25,13 +25,15 @@
 <body>
 
   <div class="top-menu">
-      <!-- icon menu burger -->
-      <div id="menutog" class="menu-icon">
-        <div class="icon_span"></div>
-        <svg x="0" y="0"  width="54px" height="54px" viewBox="0 0 54 54">
-          <path d="M16.500,27.000 C16.500,27.000 24.939,27.000 38.500,27.000 C52.061,27.000 49.945,15.648 46.510,11.367 C41.928,5.656 34.891,2.000 27.000,2.000 C13.193,2.000 2.000,13.193 2.000,27.000 C2.000,40.807 13.193,52.000 27.000,52.000 C40.807,52.000 52.000,40.807 52.000,27.000 C52.000,13.000 40.837,2.000 27.000,2.000"></path>
-        </svg> 
-      </div>
+    <!-- icon menu burger -->
+    <div id="menutog" class="menu-icon">
+      <div class="icon_span"></div>
+      <svg x="0" y="0" width="54px" height="54px" viewBox="0 0 54 54">
+        <path
+          d="M16.500,27.000 C16.500,27.000 24.939,27.000 38.500,27.000 C52.061,27.000 49.945,15.648 46.510,11.367 C41.928,5.656 34.891,2.000 27.000,2.000 C13.193,2.000 2.000,13.193 2.000,27.000 C2.000,40.807 13.193,52.000 27.000,52.000 C40.807,52.000 52.000,40.807 52.000,27.000 C52.000,13.000 40.837,2.000 27.000,2.000">
+        </path>
+      </svg>
+    </div>
 
     <button class="btn">Déconnexion</button>
   </div>
@@ -44,7 +46,8 @@
     <button class="btn-left">PRÉ</button>
   </div>
 
-  <div class="main">
+
+    <div id="tableau" class="main">
 
     <div class="globLigne">
       <div class="uneLigne">
@@ -52,8 +55,9 @@
         <div class="Lcase w300">09879879877</div>
         <div class="Lcase w300">VISA ELECTRON</div>
         <div class="Lcase w60">76</div>
-        <div style="padding-right: 5px; cursor: pointer;" class="Lcase w40"><img width="30px" height="30px" src="images/dlicon.png"></div>
-     </div>
+        <div style="padding-right: 5px; cursor: pointer;" class="Lcase w40"><img width="30px" height="30px"
+            src="images/dlicon.png"></div>
+      </div>
     </div>
 
     <div class="globLigne">
@@ -62,8 +66,9 @@
         <div class="Lcase w300">09879879877</div>
         <div class="Lcase w300">VISA ELECTRON</div>
         <div class="Lcase w60">76</div>
-        <div style="padding-right: 5px;cursor: pointer;" class="Lcase w40"><img width="30px" height="30px" src="images/dlicon.png"></div>
-     </div>
+        <div style="padding-right: 5px;cursor: pointer;" class="Lcase w40"><img width="30px" height="30px"
+            src="images/dlicon.png"></div>
+      </div>
     </div>
 
     <div class="globLigne">
@@ -72,8 +77,9 @@
         <div class="Lcase w300">09879879877</div>
         <div class="Lcase w300">VISA ELECTRON</div>
         <div class="Lcase w60">76</div>
-        <div style="padding-right: 5px;cursor: pointer;" class="Lcase w40"><img width="30px" height="30px" src="images/dlicon.png"></div>
-     </div>
+        <div style="padding-right: 5px;cursor: pointer;" class="Lcase w40"><img width="30px" height="30px"
+            src="images/dlicon.png"></div>
+      </div>
     </div>
 
     <div class="globLigne">
@@ -82,56 +88,78 @@
         <div class="Lcase w300">09879879877</div>
         <div class="Lcase w300">VISA ELECTRON</div>
         <div class="Lcase w60">76</div>
-        <div style="padding-right: 5px;cursor: pointer;" class="Lcase w40"><img width="30px" height="30px" src="images/dlicon.png"></div>
-     </div>
+        <div style="padding-right: 5px;cursor: pointer;" class="Lcase w40"><img width="30px" height="30px"
+            src="images/dlicon.png"></div>
+      </div>
     </div>
-    
+
   </div> <!-- Fin main -->
 
   <!-- Bootstrap core JavaScript -->
+  <script type="module" src="inscription.js"></script>
   <script src="js/jquery/jquery.min.js"></script>
+
 
   <!-- Menu Toggle Script -->
   <script>
     //burger
-    $(document).ready(function(){
-      $('.menu-icon').click(function(e){
-          e.preventDefault();
-          $this = $(this);
-          if($this.hasClass('is-opened')){
-              $this.addClass('is-closed').removeClass('is-opened');
-          }else{
-              $this.removeClass('is-closed').addClass('is-opened');
-          }
+    $(document).ready(function () {
+      $('.menu-icon').click(function (e) {
+        e.preventDefault();
+        $this = $(this);
+        if ($this.hasClass('is-opened')) {
+          $this.addClass('is-closed').removeClass('is-opened');
+        } else {
+          $this.removeClass('is-closed').addClass('is-opened');
+        }
       })
     });
     //Fin burger
 
+    //update DATA
+  //  var table = $(".main");
+    var compte=0;
+    var refresh = function (table) {
+     setInterval(function(table){ 
+       console.log("test")
+       document.getElementById('tableau').innerHTML=compte;
+       compte++;
+
+      }, 1000);
+    };
+
+    refresh();
+
+
+    //fin update DATA
+
+
+
     // Afficher/cacher le menu de gauche
     $("#leftm").hide();
-    $("#menutog").click(function(){
+    $("#menutog").click(function () {
       $("#leftm").slideToggle();
 
-       if ($("#leftm").is( ":visible" )) {
-           $(".main").css({ left: "200px" })
+      if ($("#leftm").is(":visible")) {
+        $(".main").css({ left: "200px" })
       }
 
-       if ($("#leftm").is( ":hidden" )) {
+      if ($("#leftm").is(":hidden")) {
         $(".main").css({ left: "0" })
       }
 
-      
+
     });
 
-   
-
-   
 
 
 
-  
 
-</script>
+
+
+
+
+  </script>
 
 </body>
 

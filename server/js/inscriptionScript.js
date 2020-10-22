@@ -8,15 +8,15 @@ const pool = mariadb.createPool({
     connectionLimit: 5
 });
 
-function selectfrom(env){
+function insertinto(nom,prenom,pass,team){
 pool.getConnection()
     .then(conn => {
+        var pseudo = prenom.substring(0, 1)+"."+nom;
+        console.log(nom,prenom,pass,pseudo,team)
 
-        conn.query("SELECT SUBSTR(firstname,4,3) as creator, lastname,debit_type, card_type,count(salesforce_id) as total FROM jdd WHERE env= '"+env+"' GROUP BY creator, debit_type, card_type")
+        conn.query("INSERT INTO user (nom, prenom, pass, pseudo, team) VALUES ('"+nom+"','"+prenom+"','"+pass+"','"+pseudo+"','"+team+"')")
             .then((rows) => {
-                rows.slice(',data').forEach(element => {
-                    console.log(element.creator + " " + element.lastname + " " + element.debit_type + " " + element.card_type + " " + element.total);
-                });
+                console.log(rows)
                 conn.end();
                 //console.log(rows.slice(',data')); 
             })
@@ -35,5 +35,5 @@ pool.getConnection()
         //not connected
     });
 }
-
-selectfrom('homol')
+exports.insertinto = insertinto;
+//selectfrom('homol')
