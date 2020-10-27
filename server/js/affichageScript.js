@@ -16,11 +16,11 @@ function selectfrom(env) {
                 conn.query("SELECT SUBSTR(firstname,4,3) as creator, lastname,debit_type, card_type,count(salesforce_id) as total FROM jdd WHERE env= '" + env + "' GROUP BY creator, debit_type, card_type")
                     .then((rows) => {
                         rows.slice(',data').forEach(element => {
-                            (element.creator + " " + element.lastname + " " + element.debit_type + " " + element.card_type + " " + element.total);
+                           // console.log(element.creator + " " + element.lastname + " " + element.debit_type + " " + element.card_type + " " + element.total);
                         });
-                        conn.end();
-                        console.log(rows.slice(',data'))
                         resolve(rows.slice(',data'));
+                        conn.end();
+                        //console.log(rows.slice(',data'))
                     })
                     .then((res) => {
                         resolve(res);
@@ -33,7 +33,6 @@ function selectfrom(env) {
                         console.log(err);
                         conn.end();
                     })
-                pool.end();
             }).catch(err => {
                 console.log(err)
                 //not connected
@@ -41,4 +40,6 @@ function selectfrom(env) {
     });
 }
 exports.selectfrom=selectfrom;
-//selectfrom('homol')
+// selectfrom('homol').then((result)=>{
+//     console.log(result)
+// })

@@ -1,6 +1,8 @@
 var fs = require('fs');
-const inscription = require('./js/inscriptionScript.js')
-const connexion = require('./js/connexionScript.js')
+const inscription = require('./js/inscriptionScript.js');
+const connexion = require('./js/connexionScript.js');
+const recuperation = require('./js/affichageScript.js');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const CryptoJS = require('crypto-js');
@@ -18,20 +20,12 @@ app.use('/', express.static('../'));
 
 
 
-
-
-
-
-
-
-
-
-
 app.post('/connexion',bodyParser.urlencoded(), async function(req,response){
     connexion.connexion(req.body.pseudo).then((user=>{
         console.log(user)
         if (user.pseudo==req.body.pseudo&&user.pass==CryptoJS.SHA1(req.body.mdp).toString()){
             session.pseudo=user.pseudo;
+            session.env='homol';
             response.writeHead(301,
                 {Location: '/dashboard.html'}
               );
@@ -47,7 +41,12 @@ app.post('/connexion',bodyParser.urlencoded(), async function(req,response){
 })
 
 
-
+app.post('/getRefs',bodyParser.json(),async function(req,response){
+    recuperation.selectfrom(req.body.env).then(function(result){
+        console.log(result);
+        response.send(result)
+    })
+})
 
 
 
